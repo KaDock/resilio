@@ -1,0 +1,13 @@
+version: '2'
+services:
+  resilio:
+    image: resilio/sync
+    container_name: resilio
+    ports:
+      - "8888:8888"
+      - "55555:55555"
+    volumes:
+      - ./data:/mnt/sync:Z
+    restart: on-failure
+    hostname: resilio
+    domainname: my.example
